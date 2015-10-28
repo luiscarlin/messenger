@@ -23,3 +23,5 @@ Based on this Javabrains tutorial -> https://www.youtube.com/playlist?list=PLqq-
 - Deployment into a Web Server (not anymore from Eclipse)
 	- JBoss
 	- something free
+- Add tests 
+- Host it somewhere
