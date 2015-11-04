@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.luchoc.messenger.database.DatabaseClass;
-import com.luchoc.messenger.model.Message;
 import com.luchoc.messenger.model.Profile;
 
 public class ProfileService {
