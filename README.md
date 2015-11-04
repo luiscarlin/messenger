@@ -24,4 +24,4 @@ Based on this Javabrains tutorial -> https://www.youtube.com/playlist?list=PLqq-
 	- JBoss
 	- something free
 - Add tests 
-- Host it somewhere
+- Host it somewheres
