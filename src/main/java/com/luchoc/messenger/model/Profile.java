@@ -59,4 +59,8 @@ public class Profile {
 	public Date getCreated() { 
 		return created;
 	}
+	
+	public void setCreated(Date created) { 
+		this.created = created;
+	}
 }
