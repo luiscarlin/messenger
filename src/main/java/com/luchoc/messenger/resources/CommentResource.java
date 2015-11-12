@@ -1,6 +1,6 @@
 package com.luchoc.messenger.resources;
 
-import java.util.Date;
+import java.net.URI;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -11,7 +11,10 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
 import com.luchoc.messenger.model.Comment;
 import com.luchoc.messenger.service.CommentService;
@@ -29,9 +32,13 @@ public class CommentResource {
 	}
 	
 	@POST
-	public Comment addComment(@PathParam("messageId") long messageId, Comment comment) { 
-		comment.setCreated(new Date());
-		return commentService.addComment(messageId, comment); 
+	public Response addComment(@PathParam("messageId") long messageId, @Context UriInfo uriInfo, Comment comment) { 
+		Comment newComment = commentService.addComment(messageId, comment); 
+		
+		URI uri = uriInfo.getAbsolutePathBuilder().path(String.valueOf(newComment.getId())).build();
+		return Response.created(uri)
+				.entity(newComment)
+				.build();
 	}
 	
 	@PUT 
