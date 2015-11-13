@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.luchoc.messenger.database.DatabaseClass;
+import com.luchoc.messenger.exception.DataNotFoundException;
 import com.luchoc.messenger.model.Message;
 
 public class MessageService {
@@ -44,7 +45,11 @@ public class MessageService {
 	}
 	
 	public Message getMessage(long id) { 
-		return messages.get(id); 
+		Message message = messages.get(id);
+		if (message == null) { 
+			throw new DataNotFoundException("Message with id " + id + " was not found");
+		}
+		return message;
 	}
 		
 	public Message addMessage(Message message) { 
