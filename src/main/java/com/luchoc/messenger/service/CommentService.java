@@ -1,7 +1,6 @@
 package com.luchoc.messenger.service;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -25,7 +24,6 @@ public class CommentService {
 	
 	public Comment addComment(long messageId, Comment comment) { 
 		Map<Long, Comment> comments = messages.get(messageId).getComments(); 
-		comment.setCreated(new Date());
 		comment.setId(comments.size() + 1);
 		comments.put(comment.getId(), comment); 
 		return comment; 	
