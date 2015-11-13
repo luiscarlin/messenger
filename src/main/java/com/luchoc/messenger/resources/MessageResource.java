@@ -22,8 +22,8 @@ import com.luchoc.messenger.resources.beans.MessageFilterBean;
 import com.luchoc.messenger.service.MessageService;
 
 @Path("/messages")
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
+@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 public class MessageResource {
 	
 	MessageService messageService = new MessageService();

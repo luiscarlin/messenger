@@ -20,8 +20,8 @@ import com.luchoc.messenger.model.Profile;
 import com.luchoc.messenger.service.ProfileService;
 
 @Path("/profiles")
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
+@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 public class ProfileResource {
 	
 	ProfileService profileService = new ProfileService();

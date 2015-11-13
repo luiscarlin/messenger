@@ -20,8 +20,8 @@ import com.luchoc.messenger.model.Comment;
 import com.luchoc.messenger.service.CommentService;
 
 @Path("/")
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
+@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 public class CommentResource {
 	
 	private CommentService commentService = new CommentService(); 
